@@ -12,6 +12,7 @@ int manog3[3];
 int manog4[3];
 int posizionemazzo = 0;
 int toccaa=0;
+int vincitoreturno=6;
 
 void inizializzagiocatori{
 	//svuoto i mazzi di guadagno dei giocatori
@@ -64,6 +65,84 @@ void dailecarte(){
 	
 
 
+	
+}
+
+int trovapostovuoto(int giocatore){
+	if (giocatore==1){for(int i=0;i<4;i++){
+		if (manog1[i]==99){return i;
+		}
+	}
+	}
+	if (giocatore==2){
+		for(int i=0;i<4;i++){
+		if (manog2[i]==99){return i;
+		}
+	}
+	}
+	if (giocatore==3){
+		for(int i=0;i<4;i++){
+		if (manog3[i]==99){return i;
+		}
+	}
+	}
+	if (giocatore==4){
+		for(int i=0;i<4;i++){
+		if (manog4[i]==99){return i;
+		}
+	}
+	}
+	
+}
+void pesca(){
+	switch (vincitoreturno){
+		case 1:
+			manog1[trovapostovuoto(1)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog2[trovapostovuoto(2)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog3[trovapostovuoto(3)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog4[trovapostovuoto(4)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			
+			break;
+		case 2:
+			manog2[trovapostovuoto(2)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog3[trovapostovuoto(3)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog4[trovapostovuoto(4)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog1[trovapostovuoto(1)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			break;
+		case 3:
+			manog3[trovapostovuoto(3)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog4[trovapostovuoto(4)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog1[trovapostovuoto(1)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog2[trovapostovuoto(2)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			break;
+		case 4:
+			manog4[trovapostovuoto(4)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog1[trovapostovuoto(1)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog2[trovapostovuoto(2)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			manog3[trovapostovuoto(3)]=mazzo[posizionemazzo];
+			posizionemazzo=posizionemazzo+1;
+			break;
+	}
+	
+}
+
+void gioca(){
+	printf();
 	
 }
 
