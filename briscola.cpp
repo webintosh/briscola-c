@@ -141,14 +141,20 @@ void pesca(){
 	
 }
 
+void primogiocatore{
+	toccaa=rand() % 4 + 1;
+};
 void gioca(){
+	
 	printf();
+	
 	
 }
 
 
 
 int main(){
+	printf("benvenuto nel gioco della briscola by daniele gibilaro\n");
 	
 
 	system("PAUSE");
