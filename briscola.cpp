@@ -3,9 +3,15 @@
 #include"stdlib.h"
 #include"math.h"
 int mazzo[40];
-
+int tavolo[4];
 int mazzog1[40];
 int mazzog2[40];
+int manog1[3];
+int manog2[3];
+int manog3[3];
+int manog4[3];
+int posizionemazzo = 0;
+int toccaa=0;
 
 void inizializzagiocatori{
 	//svuoto i mazzi di guadagno dei giocatori
@@ -41,15 +47,30 @@ void faiilmazzo(){
 	
 }
 
+void dailecarte(){
+	faiilmazzo();
+	posizionemazzo=0;
+	for(int i=0;i<3;i++){
+		manog1[i]=mazzo[posizionemazzo];
+		posizionemazzo= posizionemazzo+1;
+		manog2[i]=mazzo[posizionemazzo];
+		posizionemazzo= posizionemazzo+1;
+		manog3[i]=mazzo[posizionemazzo];
+		posizionemazzo= posizionemazzo+1;
+		manog4[i]=mazzo[posizionemazzo];
+		posizionemazzo= posizionemazzo+1;
+	}
+	
+	
+
+
+	
+}
+
 
 
 int main(){
-	printf("prima di random\n");
-	for (int i = 0; i < 40; i++) {
-	printf("%d,", mazzo[i]);}
-	faiilmazzo();
-	printf("\ndopo il mazzo\n");
-	for (int i = 0; i < 40; i++) {
-	printf("%d,", mazzo[i]);}
+	
+
 	system("PAUSE");
 }
