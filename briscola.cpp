@@ -194,6 +194,28 @@ void dtavolo(){
 		system("cls");
 	}else system("clear");
 	
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+	printf("                                                                                /n");
+
+	
+	
 
 
 
