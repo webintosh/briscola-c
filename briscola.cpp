@@ -2,7 +2,7 @@
 #include"stdio.h"
 #include"stdlib.h"
 #include"math.h"
-
+#include "time.h"
 
 #if defined(_WIN32)
     #define PLATFORM_NAME "windows" // Windows
@@ -43,20 +43,23 @@
 
 
 
+//facendo tutto globale e all'inizio non devo fare allocazioni strane poiché e tutto gestito automaticamente
 
-
-int mazzo[40];
-int tavolo[4];
-int mazzog1[40];
-int mazzog2[40];
-int manog1[3];
-int manog2[3];
-int manog3[3];
-int manog4[3];
+int mazzo[40]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int tavolo[4]={0,0,0,0};
+int mazzog1[40]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int mazzog1p=0;
+int mazzog2[40]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int mazzog2p=0;
+int manog1[3]{0,0,0};
+int manog2[3]{0,0,0};
+int manog3[3]{0,0,0};
+int manog4[3]{0,0,0};
 int posizionemazzo = 0;
 int toccaa=0;
 int vincitoreturno=6;
-
+int situazione = 0;
+int giro[4];
 void inizializzagiocatori(){
 	//svuoto i mazzi di guadagno dei giocatori
 	for (int i = 0; i < 40; i++) {    
@@ -194,25 +197,26 @@ void dtavolo(){
 		system("cls");
 	}else system("clear");
 	
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
-	printf("                                                                                /n");
+	
+	printf("                                                                                \n");
+	printf("                                                                                \n");
+	printf("                                                                                \n");
+	printf("                                                                                \n");
+	printf("                                                                                \n");
+	printf("________              -------------------------                                 \n");
+	printf("        |                                                                       \n");
+	printf("        |                                                                       \n");
+	printf("--------                                                                        \n");
+	printf("        |                                                                       \n");
+	printf("        |                                                                       \n");
+	printf("--------                                                                        \n");
+	printf("        |                                                                       \n");
+	printf("        |                                                                       \n");
+	printf("--------              --------------------------                                \n");
+	printf("                _carta1_ _carta2_ _carta3_                                    \n");
+	printf("                | %d    | | %d    | | %d    |                                   \n",manog1[0]%10,manog1[1]%10,manog1[2]%10);
+	printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
+	printf("                |     %d| |     %d| |     %d|                                   \n",manog1[0]%10,manog1[1]%10,manog1[2]%10);
 
 	
 	
@@ -250,7 +254,14 @@ void gioca(){
 
 
 int main(){
+	time_t t;
+	srand((unsigned) time(&t));
+	//seme per generatore pseudocasuale
 	printf("benvenuto nel gioco della briscola by daniele gibilaro\n");
+	faiilmazzo();
+	dailecarte();
+	dtavolo();
+	
 
     
 	
