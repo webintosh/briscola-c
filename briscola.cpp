@@ -109,6 +109,7 @@ void dailecarte(){
 		manog4[i]=mazzo[posizionemazzo];
 		posizionemazzo= posizionemazzo+1;
 	}
+	briscola= mazzo[39];
 	
 	
 
@@ -330,17 +331,38 @@ void dtavolo(int situazione){
 	
 	switch (situazione){
 	
+		case 1:	
+			printf("                                                                                \n");
+			printf(" briscola: %c valore:%c                                                         \n",(((int)briscola/10)+3),(briscola%10==0?75:(briscola%10==9?81:(briscola%10==8?74:briscola))));
+			printf("                                                                                \n");
+			printf("                                                                                \n");
+			printf("                                                                                \n");
+			printf("________              -------------------------                         ________\n");
+			printf("        |                                                              |        \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
+			printf("        |                                                              |        \n",(tavolo[2]==0?32:(int)(tavolo[2]/10)+3));
+			printf("--------                                                                --------\n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
+			printf("        |                                                              |        \n",(tavolo[1]%10==0?75:(tavolo[1]%10==9?81:(tavolo[1]%10==8?74:tavolo[2]))));
+			printf("        |                                                              |        \n",(tavolo[1]==0?32:(int)(tavolo[1]/10)+3),(tavolo[1]==0?32:(int)(tavolo[1]/10)+3));
+			printf("--------                                                                --------\n");
+			printf("        |                                                              |        \n");
+			printf("        |                                                              |        \n");
+			printf("--------              --------------------------                        --------\n");
+			printf("                _carta1_ _carta2_ _carta3_                                    \n");
+			printf("                | %d    | | %d    | | %d    |                                   \n",manog1[0]%10,manog1[1]%10,(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]))));
+			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
+			printf("                |     %d| |     %d| |     %d|                                   \n",manog1[0]%10,manog1[1]%10,manog1[2]%10);
+			break;
 		
-		case :	
+		case 2:	
 			printf("                                                                                \n");
-			printf("                                                                                \n");
+			printf(" briscola: %c valore:%c                                                         \n",(((int)briscola/10)+3),(briscola%10==0?75:(briscola%10==9?81:(briscola%10==8?74:briscola))));
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("________              -------------------------                                 \n");
-			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
-			printf("        |                       |   %c  |                                       \n",(tavolo[2]==0?32:(int)(tavolo[2]/10)+3));
-			printf("--------                        |     %c|  ------                               \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
+			printf("        |                                                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
+			printf("        |                                                                       \n",(tavolo[2]==0?32:(int)(tavolo[2]/10)+3));
+			printf("--------                                   ------                               \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
 			printf("        |                                 |  %c                                 \n",(tavolo[1]%10==0?75:(tavolo[1]%10==9?81:(tavolo[1]%10==8?74:tavolo[2]))));
 			printf("        |                                 |%c  %c                               \n",(tavolo[1]==0?32:(int)(tavolo[1]/10)+3),(tavolo[1]==0?32:(int)(tavolo[1]/10)+3));
 			printf("--------                                   ------                               \n");
@@ -353,9 +375,9 @@ void dtavolo(int situazione){
 			printf("                |     %d| |     %d| |     %d|                                   \n",manog1[0]%10,manog1[1]%10,manog1[2]%10);
 			break;
 		
-		case 2:	
+		case 3:	
 			printf("                                                                                \n");
-			printf("                                                                                \n");
+			printf(" briscola: %c valore:%c                                                         \n",(((int)briscola/10)+3),(briscola%10==0?75:(briscola%10==9?81:(briscola%10==8?74:briscola))));
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("                                                                                \n");
@@ -376,9 +398,9 @@ void dtavolo(int situazione){
 			break;
 
 		
-		case 3:	
+		case 4:	
 			printf("                                                                                \n");
-			printf("                                                                                \n");
+			printf(" briscola: %c valore:%c                                                         \n",(((int)briscola/10)+3),(briscola%10==0?75:(briscola%10==9?81:(briscola%10==8?74:briscola))));
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("                                                                                \n");
@@ -430,57 +452,56 @@ void gioca(){
 		int cartascelta = 0;
 		switch (toccaa){
 			case 1:
+			
+				//display
+				//mazzo tuo tavolo vuoto;
+				dtavolo(1);
+				printf("scegli la carta da buttare sul tavolo\n");
+				do{
+					scanf("%d",&cartascelta);
+				}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3);
+				buttasultavolo(cartascelta,1);
+				buttasultavolo(0,4);
+				buttasultavolo(0,3);
+				buttasultavolo(0,2);	
 				
-			//display
-			//mazzo tuo tavolo vuoto;
-			printf("scegli la carta da buttare sul tavolo\n");
-			do{
-				scanf("%d",&cartascelta);
-			}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3);
-			buttasultavolo(cartascelta,1);
-			buttasultavolo(0,2);
-			buttasultavolo(0,3);
-			buttasultavolo(0,4);
-			
-			
-			
-			
-			
-			break;
+				break;
 		case 2:
 			buttasultavolo(0,2);
-			buttasultavolo(0,3);
-			buttasultavolo(0,4);
+			
 			dtavolo(3);
 			printf("scegli la carta da buttare sul tavolo\n");
 			do{
 				scanf("%d",&cartascelta);
 			}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3);
 			buttasultavolo(cartascelta,1);
+			buttasultavolo(0,4);
+			buttasultavolo(0,3);
 			//display
 			break;
 		case 3:
 			
 			buttasultavolo(0,3);
-			buttasultavolo(0,4);
+			buttasultavolo(0,2);
 			printf("scegli la carta da buttare sul tavolo\n");
 			do{
 				scanf("%d",&cartascelta);
 			}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3);
 			buttasultavolo(cartascelta,1);
-			buttasultavolo(0,2);
+			buttasultavolo(0,4);
 			//display
 			break;
 		case 4:
 			
 			buttasultavolo(0,4);
+			buttasultavolo(0,3);
+			buttasultavolo(0,2);
 			printf("scegli la carta da buttare sul tavolo\n");
 			do{
 				scanf("%d",&cartascelta);
 			}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3);
 			buttasultavolo(cartascelta,1);
-			buttasultavolo(0,2);
-			buttasultavolo(0,3);
+			
 			//display
 			break;
 			
