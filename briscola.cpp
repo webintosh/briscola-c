@@ -119,6 +119,9 @@ void dailecarte(){
 void calcolavincitore(int chihainiziato){
 	
 	
+	int semebase=
+	
+	
 	
 	toccaa = vincitoreturno;
 }
@@ -152,7 +155,34 @@ int trovapostovuoto(int giocatore){
 
 
 
-void buttasultavolo(int gioco)
+void buttasultavolo(int gioco,int giocatore){
+	int carta=0;
+	if (gioco==0){
+		switch (giocatore){
+			case 2:
+				carta = rand() % 3 + 1;
+				tavolo[1]=manog1[carta];
+				manog2[carta]=99;
+				break;
+			case 3:
+				carta = rand() % 3 + 1;
+				tavolo[2]=manog1[carta];
+				manog3[carta]=99;
+				break;
+			case 4:
+				carta = rand() % 3 + 1;
+				tavolo[3]=manog1[carta];
+				manog4[carta]=99;
+				break;
+		}
+	}
+	else{
+		tavolo[0]=manog1[gioco];
+		manog1[gioco]=99;
+		
+	}
+	
+}
 void pesca(){
 	switch (vincitoreturno){
 		case 1:
@@ -199,6 +229,10 @@ void pesca(){
 	}
 	
 }
+
+
+
+
 
 void primogiocatore(){
 	toccaa=rand() % 4 + 1;
@@ -290,24 +324,59 @@ void gioca(){
 			case 1:
 				
 			//display
-			//mazzo tuo;
-			printf("scegli la carta da buttare sul mazzo\n");
+			//mazzo tuo tavolo vuoto;
+			printf("scegli la carta da buttare sul tavolo\n");
 			do{
 				scanf("%d",&cartascelta);
-			}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3)
+			}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3);
+			buttasultavolo(cartascelta,1);
+			buttasultavolo(0,2);
+			buttasultavolo(0,3);
+			buttasultavolo(0,4);
+			
+			
+			
+			
 			
 			break;
 		case 2:
+			buttasultavolo(0,2);
+			buttasultavolo(0,3);
+			buttasultavolo(0,4);
+			printf("scegli la carta da buttare sul tavolo\n");
+			do{
+				scanf("%d",&cartascelta);
+			}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3);
+			buttasultavolo(cartascelta,1);
 			//display
 			break;
 		case 3:
+			
+			buttasultavolo(0,3);
+			buttasultavolo(0,4);
+			printf("scegli la carta da buttare sul tavolo\n");
+			do{
+				scanf("%d",&cartascelta);
+			}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3);
+			buttasultavolo(cartascelta,1);
+			buttasultavolo(0,2);
 			//display
 			break;
 		case 4:
+			
+			buttasultavolo(0,4);
+			printf("scegli la carta da buttare sul tavolo\n");
+			do{
+				scanf("%d",&cartascelta);
+			}while (cartascelta!=1 or cartascelta!=2 or cartascelta!=3);
+			buttasultavolo(cartascelta,1);
+			buttasultavolo(0,2);
+			buttasultavolo(0,3);
 			//display
 			break;
 			
 		}
+		calcolailvincitore(giniziatore);
 	}
 	
 	
