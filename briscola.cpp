@@ -119,7 +119,91 @@ void dailecarte(){
 void calcolavincitore(int chihainiziato){
 	
 	
-	int semebase=
+	int semebase=(((int)tavolo[chiainiziato-1]/10)+3);
+	int valorecartabase = (tavolo[chiainiziato-1]%10==0?10:tavolo[chiainiziato-1]%10);
+	int cebriscola = 0;
+	int briscolaalta = 0;
+	int briscoladi = 0;
+	int cestrozzamento = 0;
+	int chistrozza = 0;
+	
+	for(int i=0; i<3;i++){
+		if ((((int)tavolo[i]/10)+3)==semebase){
+			if (valorecartabase==1){ //imbattibile ma messo come if per saltare le altre situazioni
+			}
+			else if ((tavolo[i]%10==0?10:tavolo[i]%10)>valorecartabase){
+				cestrozzamento = 1;
+				chistrozza = i+1;
+			} else if ((tavolo[i]%10==0?10:tavolo[i]%10)==3){
+				// situazione di 3
+				cestrozzamento = 1;
+				chistrozza = i+1;
+				
+			}
+			
+			
+		} else if((((int)tavolo[i]/10)+3)==(((int)briscola/10)+3)){
+			if (cebriscola == 0){ 
+				cebriscola = 1;
+				briscolaalta = (tavolo[i]%10==0?10:tavolo[i]%10);
+				briscoladi = i+1;
+				if ((tavolo[i]%10==0?10:tavolo[i]%10)==1){ 
+					//situazione di asso di briscola
+					vincitoreturno = i+1;
+					break;
+				}
+				
+			} else {
+				if ((tavolo[i]%10==0?10:tavolo[i]%10)==1){ 
+					//situazione di asso di briscola
+					vincitoreturno = i+1;
+					break;
+				}
+				if (briscolaalta<(tavolo[i]%10==0?10:tavolo[i]%10)){
+					//situazione di briscola alta quindi vincente
+					briscolaalta = (tavolo[i]%10==0?10:tavolo[i]%10);
+					briscoladi = i+1;
+					
+				}
+			}
+			
+			
+			
+		}
+		
+	}
+	
+	if(cestrozzamento ==0 && cebriscola==0 ){
+		vincitoreturno = chihainiziato;
+		
+	}
+	if(cestrozzamento ==0 && cebriscola==1 ){
+		vincitoreturno = briscoladi;
+		
+	}
+	if (cestrozzamento ==1 && cebriscola==0 ){
+		vincitoreturno = chistrozza;
+		
+	}
+	if (cestrozzamento ==1 && cebriscola==1){
+		vincitoreturno = briscoladi;
+	}
+	
+	
+	
+	for(int j=0;j<4;j++){
+		//svuota il tavolo
+		if(vincitoreturno == 1 or vincitoreturno==3){
+			mazzog1[mazzog1p]=tavolo[j];
+			mazzog1p=mazzog1+1;
+		}
+		else {
+			mazzog2[mazzog2p]=tavolo[j];
+			mazzog2p=mazzog2+1;
+			
+		}
+		tavolo[j]=0;
+	}
 	
 	
 	
@@ -127,25 +211,25 @@ void calcolavincitore(int chihainiziato){
 }
 
 int trovapostovuoto(int giocatore){
-	if (giocatore==1){for(int i=0;i<4;i++){
+	if (giocatore==1){for(int i=0;i<3;i++){
 		if (manog1[i]==99){return i;
 		}
 	}
 	}
 	if (giocatore==2){
-		for(int i=0;i<4;i++){
+		for(int i=0;i<3;i++){
 		if (manog2[i]==99){return i;
 		}
 	}
 	}
 	if (giocatore==3){
-		for(int i=0;i<4;i++){
+		for(int i=0;i<3;i++){
 		if (manog3[i]==99){return i;
 		}
 	}
 	}
 	if (giocatore==4){
-		for(int i=0;i<4;i++){
+		for(int i=0;i<3;i++){
 		if (manog4[i]==99){return i;
 		}
 	}
@@ -160,17 +244,17 @@ void buttasultavolo(int gioco,int giocatore){
 	if (gioco==0){
 		switch (giocatore){
 			case 2:
-				carta = rand() % 3 + 1;
+				carta = rand() % 2 + 0;
 				tavolo[1]=manog1[carta];
 				manog2[carta]=99;
 				break;
 			case 3:
-				carta = rand() % 3 + 1;
+				carta = rand() % 2 + 0;
 				tavolo[2]=manog1[carta];
 				manog3[carta]=99;
 				break;
 			case 4:
-				carta = rand() % 3 + 1;
+				carta = rand() % 2 + 0;
 				tavolo[3]=manog1[carta];
 				manog4[carta]=99;
 				break;
@@ -239,14 +323,13 @@ void primogiocatore(){
 };
 
 
-void dtavolo(){
+void dtavolo(int situazione){
 	if(PLATFORM_NAME=="windows"){
 		system("cls");
 	}else system("clear");
 	
 	switch (situazione){
-	}
-		
+	
 		
 		case :	
 			printf("                                                                                \n");
@@ -268,6 +351,29 @@ void dtavolo(){
 			printf("                | %d    | | %d    | | %d    |                                   \n",manog1[0]%10,manog1[1]%10,(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]))));
 			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
 			printf("                |     %d| |     %d| |     %d|                                   \n",manog1[0]%10,manog1[1]%10,manog1[2]%10);
+			break;
+		
+		case 2:	
+			printf("                                                                                \n");
+			printf("                                                                                \n");
+			printf("                                                                                \n");
+			printf("                                                                                \n");
+			printf("                                                                                \n");
+			printf("________              -------------------------                                 \n");
+			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
+			printf("        |                       |   %c  |                                       \n",(tavolo[2]==0?32:(int)(tavolo[2]/10)+3));
+			printf("--------                        |     %c|  ------                               \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
+			printf("        |                                 |  %c                                 \n",(tavolo[1]%10==0?75:(tavolo[1]%10==9?81:(tavolo[1]%10==8?74:tavolo[2]))));
+			printf("        |                                 |%c  %c                               \n",(tavolo[1]==0?32:(int)(tavolo[1]/10)+3),(tavolo[1]==0?32:(int)(tavolo[1]/10)+3));
+			printf("--------                                   ------                               \n");
+			printf("        |                                                                       \n");
+			printf("        |                                                                       \n");
+			printf("--------              --------------------------                                \n");
+			printf("                _carta1_ _carta2_ _carta3_                                    \n");
+			printf("                | %d    | | %d    | | %d    |                                   \n",manog1[0]%10,manog1[1]%10,(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]))));
+			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
+			printf("                |     %d| |     %d| |     %d|                                   \n",manog1[0]%10,manog1[1]%10,manog1[2]%10);
+			break;
 
 		
 		case 3:	
@@ -290,8 +396,10 @@ void dtavolo(){
 			printf("                | %d    | | %d    | | %d    |                                   \n",manog1[0]%10,manog1[1]%10,manog1[2]%10);
 			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
 			printf("                |     %d| |     %d| |     %d|                                   \n",manog1[0]%10,manog1[1]%10,manog1[2]%10);
+			break;
+			
 
-	
+}
 	
 }
 
@@ -343,6 +451,7 @@ void gioca(){
 			buttasultavolo(0,2);
 			buttasultavolo(0,3);
 			buttasultavolo(0,4);
+			dtavolo(3);
 			printf("scegli la carta da buttare sul tavolo\n");
 			do{
 				scanf("%d",&cartascelta);
@@ -377,6 +486,9 @@ void gioca(){
 			
 		}
 		calcolailvincitore(giniziatore);
+		pesca();
+		
+		
 	}
 	
 	
