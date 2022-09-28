@@ -72,7 +72,7 @@ void aspetta(int secondi){
 	clock_t inizio = clock();
 	
 	while (clock()<inizio + tempmillisecondi){
-		printf("sto aspettando/n");
+		//printf("sto aspettando\n");
 	};
 	
 	
@@ -545,7 +545,8 @@ void gioca(){
 				printf(" e' il tuo turno scegli la carta da buttare sul tavolo\n");
 				do{
 					scanf("%d",&cartascelta);
-				}while ((cartascelta!=1) or (cartascelta!=2) or (cartascelta!=3));
+					printf("%d\n",cartascelta);
+				}while (cartascelta>4);
 				buttasultavolo(cartascelta,1);
 				buttasultavolo(0,4);
 				dtavolo(5);
@@ -562,7 +563,8 @@ void gioca(){
 			printf("scegli la carta da buttare sul tavolo\n");
 			do{
 				scanf("%d",&cartascelta);
-			}while ((cartascelta!=1) or (cartascelta!=2) or (cartascelta!=3));
+				printf("%d\n",cartascelta);
+			}while (cartascelta>4);
 			buttasultavolo(cartascelta,1);
 			
 			buttasultavolo(0,4);
@@ -580,7 +582,8 @@ void gioca(){
 			printf(" e' il tuo turnoscegli la carta da buttare sul tavolo\n");
 			do{
 				scanf("%d",&cartascelta);
-			}while ((cartascelta!=1) or (cartascelta!=2) or (cartascelta!=3));
+				printf("%d\n",cartascelta);
+			}while (cartascelta>4);
 			buttasultavolo(cartascelta,1);
 			
 			buttasultavolo(0,4);
@@ -598,7 +601,7 @@ void gioca(){
 			printf(" e' il tuo turnoscegli la carta da buttare sul tavolo\n");
 			do{
 				scanf("%d",&cartascelta);
-			}while ((cartascelta!=1) or (cartascelta!=2) or (cartascelta!=3));
+			}while (cartascelta>4);
 			buttasultavolo(cartascelta-1,1);
 			
 			//display
@@ -624,7 +627,20 @@ int main(){
 	time_t t;
 	srand((unsigned) time(&t));
 	//seme per generatore pseudocasuale
-	printf("benvenuto nel gioco della briscola by daniele gibilaro\n");
+	printf("benvenuto nel gioco della \n");
+	
+	printf("\t\t  ____  ____  ___ ____   ____ ___  _        _        \n");
+	printf("\t\t | __ )|  _ \\|_ _/ ___| / ___/ _ \\| |      / \\      \n");
+	printf("\t\t |  _ \\| |_) || |\\___ \\| |  | | | | |     / _ \\     \n");
+	printf("\t\t | |_) |  _ < | | ___) | |__| |_| | |___ / ___ \\    \n");
+	printf("\t\t |____/|_| \\_\\___|____/ \\____\\___/|_____/_/   \\_\\   \n");
+	printf("\t\t                                                     \n");
+	printf("\t\t\t\t\t by Daniele Gibilaro\n");
+	
+	
+	
+	
+	
 	dailecarte();
 	gioca();
 	
