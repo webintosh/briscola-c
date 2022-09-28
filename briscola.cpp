@@ -3,7 +3,7 @@
 #include"stdlib.h"
 #include"math.h"
 #include "time.h"
-
+// capisco la piattaforma per scegliere se usare clear o cls
 #if defined(_WIN32)
     #define PLATFORM_NAME "windows" // Windows
 #elif defined(_WIN64)
@@ -43,7 +43,9 @@
 
 
 
-//facendo tutto globale e all'inizio non devo fare allocazioni strane poiché e tutto gestito automaticamente
+//facendo tutto globale e all'inizio non devo fare allocazioni poiché e tutto gestito automaticamente
+// in questo caso in cui le allocazioni sono definite e non cambiano con l'esecuzione questa cosa non cambia le prestazioni di memoria che l'applicativo usa
+
 
 int mazzo[40]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 int tavolo[4]={0,0,0,0};
@@ -62,6 +64,20 @@ int situazione = 0;
 int giro[4];
 int giniziatore=0;
 int briscola=0;
+
+void aspetta(int secondi){
+	//creo una funzione per aspettare , verra utilizzata probabilmente per animazioni o aggiornare lo schermo
+	int tempmillisecondi = 1000 * secondi;
+	//salvo l'orario iniziale in ms
+	clock_t inizio = clock();
+	
+	while (clock()<inizio + tempmillisecondi){
+		printf("sto aspettando/n");
+	};
+	
+	
+	
+}
 void inizializzagiocatori(){
 	//svuoto i mazzi di guadagno dei giocatori
 	for (int i = 0; i < 40; i++) {    
@@ -325,6 +341,8 @@ void primogiocatore(){
 
 
 void dtavolo(int situazione){
+	//aspetto 5 secondi prima di cambiare la schermata (altrimenti non si capirebbero le mosse)
+	aspetta(5);
 	if(PLATFORM_NAME=="windows"){
 		system("cls");
 	}else system("clear");
@@ -607,7 +625,6 @@ int main(){
 	srand((unsigned) time(&t));
 	//seme per generatore pseudocasuale
 	printf("benvenuto nel gioco della briscola by daniele gibilaro\n");
-	faiilmazzo();
 	dailecarte();
 	gioca();
 	
