@@ -547,13 +547,13 @@ void chihavinti(){
 		
 	}
 	if (punteggiog1>punteggiog2){
-		printf("\n\nGrazie di aver giocato, ha vinto la squadra g1 g3\n")
+		printf("\n\nGrazie di aver giocato, ha vinto la squadra g1 g3\n");
 	}
 	if (punteggiog2>punteggiog1){
-		printf("\n\nGrazie di aver giocato, ha vinto la squadra g4 g2\n")
+		printf("\n\nGrazie di aver giocato, ha vinto la squadra g4 g2\n");
 	}
 	if (punteggiog2==punteggiog1){
-		printf("\n\nGrazie di aver giocato, la partita termina con un pareggio\n")
+		printf("\n\nGrazie di aver giocato, la partita termina con un pareggio\n");
 	}
 }
 
