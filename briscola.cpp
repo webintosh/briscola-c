@@ -642,13 +642,7 @@ int main(){
 	
 	
 	dailecarte();
-	/*
-	printf("stampo il mazzo con seme e controllo delle formule\n");
-	for(int i=0;i<40;i++){
-		printf(" carta %d valore: %c  ",i,(mazzo[i]%10==0?75:(mazzo[i]%10==9?81:(mazzo[i]%10==8?74:mazzo[i]%10+49))) );
-		printf("   simbolo %c\n",(((int)mazzo[i]/10)+3));
-	}
-	*/
+	
 	gioca();
 	
 	
