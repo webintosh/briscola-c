@@ -511,7 +511,51 @@ void dtavolo(int situazione){
 }
 
 
-
+void chihavinti(){
+	int punteggiog1=0, punteggiog2=0;
+	for(int i=0;i<40;i++){
+		if(mazzog2[i]%10==1){
+			punteggiog2 = punteggiog2+11;
+		}
+		if(mazzog1[i]%10==1){
+			punteggiog1 = punteggiog1+11;
+		}
+		if(mazzog2[i]%10==3){
+			punteggiog2 = punteggiog2+10;
+		}
+		if(mazzog1[i]%10==3){
+			punteggiog1 = punteggiog1+10;
+		}
+		if(mazzog2[i]%10==9){
+			punteggiog2 = punteggiog2+3;
+		}
+		if(mazzog1[i]%10==9){
+			punteggiog1 = punteggiog1+3;
+		}
+		if(mazzog2[i]%10==8){
+			punteggiog2 = punteggiog2+2;
+		}
+		if(mazzog1[i]%10==8){
+			punteggiog1 = punteggiog1+2;
+		}
+		if(mazzog2[i]==10||mazzog2[i]==20||mazzog2[i]==30||mazzog2[i]==40){
+			punteggiog2 = punteggiog2+4;
+		}
+		if(mazzog1[i]==10||mazzog1[i]==20||mazzog1[i]==30||mazzog1[i]==40){
+			punteggiog1 = punteggiog1+4;
+		}
+		
+	}
+	if (punteggiog1>punteggiog2){
+		printf("\n\nGrazie di aver giocato, ha vinto la squadra g1 g3\n")
+	}
+	if (punteggiog2>punteggiog1){
+		printf("\n\nGrazie di aver giocato, ha vinto la squadra g4 g2\n")
+	}
+	if (punteggiog2==punteggiog1){
+		printf("\n\nGrazie di aver giocato, la partita termina con un pareggio\n")
+	}
+}
 
 
 
@@ -613,6 +657,7 @@ void gioca(){
 		
 		
 	}
+	chihavinto();
 	
 	
 	
