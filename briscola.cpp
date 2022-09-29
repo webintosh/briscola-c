@@ -366,9 +366,9 @@ void dtavolo(int situazione){
 			printf("        |                                                              |        \n");
 			printf("--------              --------------------------                        --------\n");
 			printf("                _carta1_ _carta2_ _carta3_                                    \n");
-			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
-			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			break;
 		
 		case 2:	
@@ -378,19 +378,19 @@ void dtavolo(int situazione){
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("________              -------------------------                                 \n");
-			printf("        |                                                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]+48))));
+			printf("        |                                                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]%10+48))));
 			printf("        |                                                                       \n",(tavolo[2]==0?32:(int)(tavolo[2]/10)+3));
-			printf("--------                                   ------                               \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]+48))));
-			printf("        |                                 |  %c                                 \n",(tavolo[1]%10==0?75:(tavolo[1]%10==9?81:(tavolo[1]%10==8?74:tavolo[2]+48))));
+			printf("--------                                   ------                               \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]%10+48))));
+			printf("        |                                 |  %c                                 \n",(tavolo[1]%10==0?75:(tavolo[1]%10==9?81:(tavolo[1]%10==8?74:tavolo[2]%10+48))));
 			printf("        |                                 |%c  %c                               \n",(tavolo[1]==0?32:(int)(tavolo[1]/10)+3),(tavolo[1]==0?32:(int)(tavolo[1]/10)+3));
 			printf("--------                                   ------                               \n");
 			printf("        |                                                                       \n");
 			printf("        |                                                                       \n");
 			printf("--------              --------------------------                                \n");
 			printf("                _carta1_ _carta2_ _carta3_                                    \n");
-			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
-			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			break;
 		
 		case 3:	
@@ -400,19 +400,19 @@ void dtavolo(int situazione){
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("________              -------------------------                                 \n");
-			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]+48))));
+			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]%10+48))));
 			printf("        |                       |   %c  |                                       \n",(tavolo[2]==0?32:(int)(tavolo[2]/10)+3));
-			printf("--------                        |     %c|  ------                               \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]+48))));
-			printf("        |                                 |  %c                                 \n",(tavolo[1]%10==0?75:(tavolo[1]%10==9?81:(tavolo[1]%10==8?74:tavolo[2]+48))));
+			printf("--------                        |     %c|  ------                               \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]%10+48))));
+			printf("        |                                 |  %c                                 \n",(tavolo[1]%10==0?75:(tavolo[1]%10==9?81:(tavolo[1]%10==8?74:tavolo[2]%10+48))));
 			printf("        |                                 |%c  %c                               \n",(tavolo[1]==0?32:(int)(tavolo[1]/10)+3),(tavolo[1]==0?32:(int)(tavolo[1]/10)+3));
 			printf("--------                                   ------                               \n");
 			printf("        |                                                                       \n");
 			printf("        |                                                                       \n");
 			printf("--------              --------------------------                                \n");
 			printf("                _carta1_ _carta2_ _carta3_                                    \n");
-			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
-			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			break;
 
 		
@@ -423,19 +423,19 @@ void dtavolo(int situazione){
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("________              -------------------------                                 \n");
-			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]+48))));
+			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]%10+48))));
 			printf("        |                       |   %c  |                                       \n",(tavolo[2]==0?32:(int)(tavolo[2]/10)+3));
-			printf("--------              ------    |     %c|  ------                               \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]+48))));
-			printf("        |             %c  %c|             |  %c                                 \n",(tavolo[3]==0?32:(int)(tavolo[3]/10)+3),(tavolo[3]==0?32:(int)(tavolo[3]/10)+3),(tavolo[3]%10==0?75:(tavolo[3]%10==9?81:(tavolo[3]%10==8?74:tavolo[3]+48))));
-			printf("        |               %c  |             |%c  %c                               \n",(tavolo[3]%10==0?75:(tavolo[3]%10==9?81:(tavolo[3]%10==8?74:tavolo[3]+48))),(tavolo[1]==0?32:(int)(tavolo[1]/10)+3),(tavolo[1]==0?32:(int)(tavolo[1]/10)+3));
+			printf("--------              ------    |     %c|  ------                               \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]%10+48))));
+			printf("        |             %c  %c|             |  %c                                 \n",(tavolo[3]==0?32:(int)(tavolo[3]/10)+3),(tavolo[3]==0?32:(int)(tavolo[3]/10)+3),(tavolo[3]%10==0?75:(tavolo[3]%10==9?81:(tavolo[3]%10==8?74:tavolo[3]%10+48))));
+			printf("        |               %c  |             |%c  %c                               \n",(tavolo[3]%10==0?75:(tavolo[3]%10==9?81:(tavolo[3]%10==8?74:tavolo[3]%10+48))),(tavolo[1]==0?32:(int)(tavolo[1]/10)+3),(tavolo[1]==0?32:(int)(tavolo[1]/10)+3));
 			printf("--------             ------                ------                               \n");
 			printf("        |                                                                       \n");
 			printf("        |                                                                       \n");
 			printf("--------              --------------------------                                \n");
 			printf("                _carta1_ _carta2_ _carta3_                                    \n");
-			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
-			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			break;
 		
 		
@@ -450,7 +450,7 @@ void dtavolo(int situazione){
 			printf("        |                                                                       \n");
 			printf("--------              ------                                                    \n");
 			printf("        |             %c  %c|                                                   \n",(tavolo[3]==0?32:(int)(tavolo[3]/10)+3),(tavolo[3]==0?32:(int)(tavolo[3]/10)+3));
-			printf("        |               %c  |                                                   \n",(tavolo[3]%10==0?75:(tavolo[3]%10==9?81:(tavolo[3]%10==8?74:tavolo[3]+48))));
+			printf("        |               %c  |                                                   \n",(tavolo[3]%10==0?75:(tavolo[3]%10==9?81:(tavolo[3]%10==8?74:tavolo[3]%10+48))));
 			printf("--------             ------                                                     \n");
 			printf("        |                                                                       \n");
 			printf("        |                                                                       \n");
@@ -468,31 +468,31 @@ void dtavolo(int situazione){
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("________              -------------------------                                 \n");
-			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
+			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]%10+48))));
 			printf("        |                       |   %c  |                                       \n",(tavolo[2]==0?32:(int)(tavolo[2]/10)+3));
 			printf("--------              ------    |     %c|                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
 			printf("        |             %c  %c|                                                   \n",(tavolo[3]==0?32:(int)(tavolo[3]/10)+3),(tavolo[3]==0?32:(int)(tavolo[3]/10)+3));
-			printf("        |               %c  |                                                   \n",(tavolo[3]%10==0?75:(tavolo[3]%10==9?81:(tavolo[3]%10==8?74:tavolo[3]))));
+			printf("        |               %c  |                                                   \n",(tavolo[3]%10==0?75:(tavolo[3]%10==9?81:(tavolo[3]%10==8?74:tavolo[3]%10+48))));
 			printf("--------             ------                                                     \n");
 			printf("        |                                                                       \n");
 			printf("        |                                                                       \n");
 			printf("--------              --------------------------                                \n");
 			printf("                _carta1_ _carta2_ _carta3_                                    \n");
-			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
-			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			break;
 		
 		case 7:	
 			printf("                                                                                \n");
-			printf(" briscola: %c valore:%c                                                         \n",(((int)briscola/10)+3),(briscola%10==0?75:(briscola%10==9?81:(briscola%10==8?74:briscola))));
+			printf(" briscola: %c valore:%c                                                         \n",(((int)briscola/10)+3),(briscola%10==0?75:(briscola%10==9?81:(briscola%10==8?74:briscola%10+48))));
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("                                                                                \n");
 			printf("________              -------------------------                                 \n");
-			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
+			printf("        |                       | %c    |                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]%10+48))));
 			printf("        |                       |   %c  |                                       \n",(tavolo[2]==0?32:(int)(tavolo[2]/10)+3));
-			printf("--------                        |     %c|                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]))));
+			printf("--------                        |     %c|                                       \n",(tavolo[2]%10==0?75:(tavolo[2]%10==9?81:(tavolo[2]%10==8?74:tavolo[2]%10+48))));
 			printf("        |                                                                       \n");
 			printf("        |                                                                       \n");
 			printf("--------                                                                        \n");
@@ -500,9 +500,9 @@ void dtavolo(int situazione){
 			printf("        |                                                                       \n");
 			printf("--------              --------------------------                                \n");
 			printf("                _carta1_ _carta2_ _carta3_                                    \n");
-			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                | %c    | | %c    | | %c    |                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			printf("                |   %c  | |   %c  | |   %c  |                                   \n",(((int)manog1[0]/10)+3),(((int)manog1[1]/10)+3),(((int)manog1[2]/10)+3));
-			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]+48))));
+			printf("                |     %c| |     %c| |     %c|                                   \n",(manog1[0]%10==0?75:(manog1[0]%10==9?81:(manog1[0]%10==8?74:manog1[0]%10+48))),(manog1[1]%10==0?75:(manog1[1]%10==9?81:(manog1[1]%10==8?74:manog1[1]%10+48))),(manog1[2]%10==0?75:(manog1[2]%10==9?81:(manog1[2]%10==8?74:manog1[2]%10+48))));
 			break;
 			
 
@@ -642,6 +642,13 @@ int main(){
 	
 	
 	dailecarte();
+	/*
+	printf("stampo il mazzo con seme e controllo delle formule\n");
+	for(int i=0;i<40;i++){
+		printf(" carta %d valore: %c  ",i,(mazzo[i]%10==0?75:(mazzo[i]%10==9?81:(mazzo[i]%10==8?74:mazzo[i]%10+49))) );
+		printf("   simbolo %c\n",(((int)mazzo[i]/10)+3));
+	}
+	*/
 	gioca();
 	
 	
